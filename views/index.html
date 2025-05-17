@@ -1,32 +1,65 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
   <head>
-    <title>URL Shortener Microservice | freeCodeCamp.org</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png"
-    />
-    <link href="/public/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener Microservice</title>
+    <link rel="stylesheet" href="/public/style.css" />
   </head>
-
   <body>
-    <h1>URL Shortener Microservice</h1>
-    <main>
-      <section>
-        <form action="api/shorturl" method="POST">
-          <fieldset>
-            <legend>URL Shortener</legend>
-            <label for="url_input">URL:</label>
-            <input id="url_input" type="text" name="url" placeholder="https://www.freecodecamp.org/" />
-            <input type="submit" value="POST URL" />
-          </fieldset>
-        </form>
-      </section>
-    </main>
+    <div class="container">
+      <h1>🔗 URL Shortener Microservice</h1>
+
+      <form action="/api/shorturl" method="POST">
+        <input
+          type="text"
+          name="url"
+          placeholder="https://github.com/aDogdev/"
+          required
+        />
+        <button type="submit">Shorten URL</button>
+      </form>
+
+      <h3>Example Usage:</h3>
+      <code
+        >POST [project_url]/api/shorturl - Body:
+        url=https://github.com/aDogdev/</code
+      >
+
+      <h3>Example Output:</h3>
+      <pre>
+{
+  "original_url": "https://github.com/aDogdev/",
+  "short_url": 1
+}</pre
+      >
+      <p>
+        Try visiting:
+        <code>https://[project_url]/api/shorturl/1</code>
+        → Redirects to
+        <a href="https://github.com/aDogdev/" target="_blank" rel="noopener">
+          https://github.com/aDogdev/
+        </a>
+      </p>
+    </div>
+
     <footer>
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
+      <p>
+        Project developed as part of the
+        <a
+          href="https://www.freecodecamp.org/learn/back-end-development-and-apis/"
+          target="_blank"
+          rel="noopener"
+        >
+          freeCodeCamp Back End Development Certification </a
+        >.
+      </p>
+      <p>
+        Created by aDog -
+        <a href="https://github.com/aDogdev/" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+      </p>
     </footer>
   </body>
 </html>
